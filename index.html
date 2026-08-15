@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Commande de Site Web — Mustchrist</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="page-accueil" class="page active">
+  <div class="hero">
+    <h1>Commandez votre site web</h1>
+    <p>Remplissez ce formulaire pour recevoir votre site web professionnel créé par Mustchrist</p>
+    <button class="btn-principal" onclick="afficherPage('page-formulaire')">Commencer</button>
+  </div>
+</div>
+
+<div id="page-formulaire" class="page">
+  <div class="container">
+    <h2>Formulaire de commande</h2>
+    <p class="info-texte">Remplissez toutes les informations ci-dessous.</p>
+
+    <div class="section-formulaire">
+      <h3>1. Informations personnelles</h3>
+      <div class="champ"><label>Nom complet</label><input type="text" id="nom" placeholder="Ex: ATCHOU Olivier" /></div>
+      <div class="champ"><label>Numéro WhatsApp</label><input type="tel" id="whatsapp" placeholder="Ex: +229 0152353448" /></div>
+      <div class="champ"><label>Adresse email (facultatif)</label><input type="email" id="email" placeholder="Ex: votrenom@gmail.com" /></div>
+      <div class="champ"><label>Ville et quartier</label><input type="text" id="ville" placeholder="Ex: Cotonou, Cadjehoun" /></div>
+    </div>
+
+    <div class="section-formulaire">
+      <h3>2. Type de site souhaité</h3>
+      <p class="info-texte">Lisez chaque description et cochez le type qui correspond.</p>
+      <div class="type-site"><label class="type-label"><input type="radio" name="type" value="portfolio" onchange="afficherQuestions('portfolio')" /><div class="type-contenu"><strong>Portfolio personnel</strong><p>Idéal pour présenter qui vous êtes, vos compétences et vos services. Parfait pour les freelances, artistes et professionnels indépendants.</p></div></label></div>
+      <div class="type-site"><label class="type-label"><input type="radio" name="type" value="vitrine" onchange="afficherQuestions('vitrine')" /><div class="type-contenu"><strong>Site vitrine entreprise</strong><p>Parfait pour présenter votre entreprise ou commerce. Montre vos produits, services, localisation et contacts professionnels.</p></div></label></div>
+      <div class="type-site"><label class="type-label"><input type="radio" name="type" value="boutique" onchange="afficherQuestions('boutique')" /><div class="type-contenu"><strong>Boutique en ligne</strong><p>Pour vendre vos produits sur internet. Vos clients peuvent voir vos articles, les prix et vous contacter pour commander.</p></div></label></div>
+      <div class="type-site"><label class="type-label"><input type="radio" name="type" value="blog" onchange="afficherQuestions('blog')" /><div class="type-contenu"><strong>Blog</strong><p>Pour partager vos idées, conseils et actualités régulièrement. Idéal pour les créateurs de contenu.</p></div></label></div>
+      <div class="type-site"><label class="type-label"><input type="radio" name="type" value="autre" onchange="afficherQuestions('autre')" /><div class="type-contenu"><strong>Autre</strong><p>Besoin spécifique qui ne correspond pas aux options ci-dessus. Décrivez votre projet dans les commentaires.</p></div></label></div>
+    </div>
+
+    <div id="questions-portfolio" class="section-formulaire questions-specifiques">
+      <h3>3. Questions — Portfolio personnel</h3>
+      <div class="champ"><label>Votre métier ou profession</label><input type="text" id="p-metier" placeholder="Ex: Électricien, Graphiste, Photographe..." /></div>
+      <div class="champ"><label>Vos compétences principales</label><textarea id="p-competences" placeholder="Listez vos 3 à 5 compétences principales..."></textarea></div>
+      <div class="champ"><label>Vos réalisations à mettre en avant</label><textarea id="p-realisations" placeholder="Décrivez vos meilleurs travaux ou projets réalisés..."></textarea></div>
+      <div class="champ"><label>Avez-vous des témoignages clients ?</label><select id="p-temoignages"><option value="">Sélectionnez...</option><option value="oui">Oui, j'en ai</option><option value="non">Non, pas encore</option></select></div>
+    </div>
+
+    <div id="questions-vitrine" class="section-formulaire questions-specifiques">
+      <h3>3. Questions — Site vitrine entreprise</h3>
+      <div class="champ"><label>Nom de l'entreprise</label><input type="text" id="v-nom" placeholder="Ex: Électricité Pro Bénin" /></div>
+      <div class="champ"><label>Secteur d'activité</label><input type="text" id="v-secteur" placeholder="Ex: Électricité, Restauration, Commerce..." /></div>
+      <div class="champ"><label>Adresse physique</label><input type="text" id="v-adresse" placeholder="Ex: Cotonou, Quartier Cadjehoun, Rue..." /></div>
+      <div class="champ"><label>Horaires d'ouverture</label><input type="text" id="v-horaires" placeholder="Ex: Lundi-Samedi 8h-18h" /></div>
+      <div class="champ"><label>Services ou produits proposés</label><textarea id="v-services" placeholder="Listez tous vos services ou produits..."></textarea></div>
+    </div>
+
+    <div id="questions-boutique" class="section-formulaire questions-specifiques">
+      <h3>3. Questions — Boutique en ligne</h3>
+      <div class="champ"><label>Catégories de produits</label><textarea id="b-categories" placeholder="Ex: Téléphones, Chaussures, Énergie solaire..."></textarea></div>
+      <div class="champ"><label>Nombre approximatif de produits</label><select id="b-nombre"><option value="">Sélectionnez...</option><option value="1-10">1 à 10 produits</option><option value="11-50">11 à 50 produits</option><option value="50+">Plus de 50 produits</option></select></div>
+      <div class="champ"><label>Fourchette de prix</label><input type="text" id="b-prix" placeholder="Ex: 500 FCFA à 50 000 FCFA" /></div>
+      <div class="champ"><label>Mode de livraison</label><select id="b-livraison"><option value="">Sélectionnez...</option><option value="sur-place">Retrait sur place uniquement</option><option value="livraison">Livraison à domicile</option><option value="les-deux">Les deux options</option></select></div>
+      <div class="champ"><label>Mode de paiement accepté</label><textarea id="b-paiement" placeholder="Ex: MTN Money, Moov Money, Espèces..."></textarea></div>
+    </div>
+
+    <div id="questions-blog" class="section-formulaire questions-specifiques">
+      <h3>3. Questions — Blog</h3>
+      <div class="champ"><label>Thème principal du blog</label><input type="text" id="bl-theme" placeholder="Ex: Bien-être, Technologie, Voyage, Religion..." /></div>
+      <div class="champ"><label>Fréquence de publication</label><select id="bl-frequence"><option value="">Sélectionnez...</option><option value="quotidien">Tous les jours</option><option value="hebdo">Une fois par semaine</option><option value="mensuel">Une fois par mois</option><option value="variable">Variable</option></select></div>
+      <div class="champ"><label>Public cible</label><input type="text" id="bl-public" placeholder="Ex: Jeunes, Professionnels, Chrétiens, Entrepreneurs..." /></div>
+      <div class="champ"><label>Langue de rédaction</label><select id="bl-langue"><option value="">Sélectionnez...</option><option value="francais">Français</option><option value="anglais">Anglais</option><option value="les-deux">Français et Anglais</option></select></div>
+    </div>
+
+    <div id="questions-autre" class="section-formulaire questions-specifiques">
+      <h3>3. Questions — Autre projet</h3>
+      <div class="champ"><label>Décrivez votre projet en détail</label><textarea id="a-description" placeholder="Expliquez ce que vous voulez créer, à quoi ça va servir et qui va l'utiliser..."></textarea></div>
+      <div class="champ"><label>Fonctionnalités souhaitées</label><textarea id="a-fonctions" placeholder="Ex: Inscription des utilisateurs, Paiement en ligne, Carte interactive..."></textarea></div>
+    </div>
+
+    <div class="section-formulaire">
+      <h3>4. Design et apparence</h3>
+      <div class="champ"><label>Couleur préférée</label><input type="text" id="couleur" placeholder="Ex: Bleu et blanc, Vert et or, Noir et orange..." /></div>
+      <div class="champ"><label>Style du site</label><select id="style"><option value="">Choisissez un style...</option><option value="moderne">Moderne et épuré</option><option value="classique">Classique et élégant</option><option value="colore">Coloré et dynamique</option><option value="sombre">Sombre et professionnel</option></select></div>
+      <div class="champ"><label>Avez-vous un logo ?</label><select id="logo" onchange="afficherAlerteLogo()"><option value="">Sélectionnez...</option><option value="oui">Oui, j'ai un logo</option><option value="non">Non, je n'ai pas de logo</option><option value="creation">Non, mais je souhaite en créer un</option></select></div>
+      <div id="alerte-logo" class="alerte-logo">Parfait ! Après avoir soumis ce formulaire, vous recevrez un message vous demandant d'envoyer votre logo sur WhatsApp au +229 0152353448. Gardez votre logo prêt !</div>
+    </div>
+
+    <div class="section-formulaire">
+      <h3>5. Réseaux sociaux</h3>
+      <p class="info-texte">Remplissez uniquement ceux que vous avez.</p>
+      <div class="champ"><label>Facebook</label><input type="text" id="facebook" placeholder="Collez le lien de votre profil Facebook" /></div>
+      <div class="champ"><label>TikTok</label><input type="text" id="tiktok" placeholder="Ex: @votrenom sur TikTok" /></div>
+      <div class="champ"><label>Instagram</label><input type="text" id="instagram" placeholder="Ex: @votrenom sur Instagram" /></div>
+      <div class="champ"><label>WhatsApp Business</label><input type="tel" id="whatsappBusiness" placeholder="Numéro WhatsApp Business si différent du principal" /></div>
+      <div class="champ"><label>Autre réseau social</label><input type="text" id="autreReseau" placeholder="Nom du réseau et votre identifiant" /></div>
+    </div>
+
+    <div class="section-formulaire">
+      <h3>6. Budget et délai</h3>
+      <div class="champ"><label>Budget approximatif (en FCFA)</label><select id="budget"><option value="">Sélectionnez votre budget...</option><option value="5000-15000">5 000 — 15 000 FCFA</option><option value="15000-50000">15 000 — 50 000 FCFA</option><option value="50000-100000">50 000 — 100 000 FCFA</option><option value="100000+">Plus de 100 000 FCFA</option><option value="discuter">A discuter</option></select></div>
+      <div class="champ"><label>Délai souhaité</label><select id="delai"><option value="">Sélectionnez un délai...</option><option value="urgent">Urgent — moins d'une semaine</option><option value="normal">Normal — 1 à 2 semaines</option><option value="flexible">Flexible — plus de 2 semaines</option></select></div>
+      <div class="champ"><label>Commentaires supplémentaires</label><textarea id="commentaires" placeholder="Tout autre détail important pour votre projet..."></textarea></div>
+    </div>
+
+    <div class="boutons-action">
+      <button class="btn-secondaire" onclick="previsualiser()">Prévisualiser mes réponses</button>
+      <button class="btn-principal" onclick="soumettre()">Envoyer ma commande</button>
+    </div>
+  </div>
+</div>
+
+<div id="page-preview" class="page">
+  <div class="container">
+    <h2>Vérifiez vos informations</h2>
+    <p class="info-texte">Vérifiez que tout est correct avant d'envoyer.</p>
+    <div id="resume-commande"></div>
+    <div class="boutons-action">
+      <button class="btn-secondaire" onclick="afficherPage('page-formulaire')">Modifier mes réponses</button>
+      <button class="btn-principal" onclick="soumettre()">Confirmer et envoyer</button>
+    </div>
+  </div>
+</div>
+
+<div id="page-confirmation" class="page">
+  <div class="container confirmation">
+    <h2>Commande envoyée !</h2>
+    <p>Merci pour votre commande. Mustchrist vous contactera sous 24h sur votre WhatsApp.</p>
+    <p class="numero-commande" id="numeroCommande"></p>
+    <button class="btn-secondaire" id="btn-copier-numero" onclick="copier('numeroCommande', this)">Copier le numéro de commande</button>
+    <div id="logo-message" style="display:none; background:#1a1a00; border:1px solid orange; border-radius:8px; padding:15px; margin:15px 0; color:orange; font-size:14px;"></div>
+    <button class="whatsapp-btn" id="btn-whatsapp-logo" style="display:none;" onclick="envoyerWhatsApp()">Envoyer mon logo sur WhatsApp</button>
+    <button class="btn-principal" style="margin-top:10px;" onclick="nouvelleCommande()">Faire une nouvelle commande</button>
+  </div>
+</div>
+
+<div id="page-recuperer" class="page">
+  <div class="container">
+    <h2>Récupérer mon site web</h2>
+    <p class="info-texte">Entrez votre numéro de commande pour récupérer le lien de votre site web.</p>
+    <div class="section-formulaire">
+      <div class="champ">
+        <label>Numéro de commande</label>
+        <input type="text" id="numeroRecherche" placeholder="Ex: CMD-1234567890" />
+      </div>
+      <button class="btn-principal" onclick="rechercherCommande()">Rechercher ma commande</button>
+    </div>
+    <div id="resultat-recherche" style="display:none;"></div>
+    <div class="boutons-action" style="margin-top:20px;">
+      <button class="btn-secondaire" onclick="afficherPage('page-accueil')">Retour à l'accueil</button>
+    </div>
+  </div>
+</div>
+
+<div id="page-admin" class="page">
+  <div class="container">
+    <div class="admin-header">
+      <h2>Espace Administrateur</h2>
+      <button class="btn-secondaire" onclick="afficherPage('page-accueil')">Se déconnecter</button>
+    </div>
+    <div id="stats-admin"></div>
+    <div id="liste-commandes"></div>
+  </div>
+</div>
+
+<div id="login-admin" class="page">
+  <div class="container">
+    <div class="login-box">
+      <h2>Accès Administrateur</h2>
+      <div class="champ">
+        <label>Mot de passe</label>
+        <input type="password" id="motDePasse" placeholder="Entrez votre mot de passe secret" />
+      </div>
+      <button class="btn-principal" onclick="connecterAdmin()">Se connecter</button>
+      <p class="retour-lien" onclick="afficherPage('page-accueil')">Retour à l'accueil</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>Mustchrist — Service de création de sites web</p>
+  <p>WhatsApp : +229 0152353448</p>
+  <p class="admin-lien" onclick="afficherPage('page-recuperer')">Récupérer mon site</p>
+  <p class="admin-lien" onclick="afficherPage('login-admin')">Admin</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+                           </html>
