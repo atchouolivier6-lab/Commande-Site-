@@ -5,7 +5,8 @@
 }
 
 body {
-  background: #0a0a0a;
+  background: linear-gradient(160deg, #0d0033, #000d1a, #001a0d);
+  background-attachment: fixed;
   color: white;
   font-family: Arial, sans-serif;
   line-height: 1.6;
@@ -27,7 +28,7 @@ body {
   justify-content: center;
   text-align: center;
   padding: 40px 20px;
-  background: linear-gradient(135deg, #1a0033, #0a0a0a);
+  background: linear-gradient(160deg, #0d0033, #000d1a, #001a0d);
 }
 
 .hero h1 {
@@ -41,6 +42,51 @@ body {
   color: #aaa;
   max-width: 500px;
   margin-bottom: 30px;
+}
+
+.recuperer-section {
+  margin-top: 40px;
+  border-top: 1px solid #333;
+  padding-top: 30px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.recuperer-info {
+  background: #1a1a2e;
+  border: 1px solid #444;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 15px;
+}
+
+.recuperer-titre {
+  color: orange;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.recuperer-texte {
+  color: #aaa;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.btn-recuperer {
+  background: transparent;
+  color: orange;
+  border: 2px solid orange;
+  border-radius: 8px;
+  padding: 14px 25px;
+  font-size: 15px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.btn-recuperer:hover {
+  background: orange;
+  color: black;
 }
 
 .container {
@@ -389,9 +435,12 @@ button {
   background: #004400;
   color: white;
   border: none;
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
 }
 
-.champ-lien {
+  .champ-lien {
   width: 100%;
   padding: 10px;
   border-radius: 8px;
@@ -446,3 +495,4 @@ footer {
 .admin-lien:hover {
   color: purple;
   }
+  
