@@ -495,4 +495,65 @@ footer {
 .admin-lien:hover {
   color: purple;
   }
-  
+
+  @media (min-width: 768px) {
+  .hero h1 {
+    font-size: 45px;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+
+  .container {
+    max-width: 750px;
+    padding: 40px 30px;
+  }
+
+  .boutons-action {
+    flex-direction: row;
+  }
+
+  .boutons-action button {
+    width: auto;
+    flex: 1;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .commande-actions button {
+    padding: 10px 20px;
+  }
+
+  .type-label {
+    padding: 20px;
+  }
+
+  .section-formulaire {
+    padding: 30px;
+  }
+
+  .resume-item span:first-child {
+    min-width: 200px;
+  }
+
+  .login-box {
+    margin: 150px auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 850px;
+  }
+
+  .hero h1 {
+    font-size: 55px;
+  }
+
+  .recuperer-section {
+    max-width: 600px;
+  }
+}
